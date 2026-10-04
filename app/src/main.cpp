@@ -10,6 +10,6 @@ int main(void)
 
     while (1) {
         gpio_pin_toggle_dt(&led);
-        k_msleep(1000);
+        k_msleep(CONFIG_BLINK_SLEEP_TIME_MS);
     }
 }
