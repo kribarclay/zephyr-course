@@ -1,7 +1,7 @@
 #include <zephyr/drivers/gpio.h>
 
 static const struct gpio_dt_spec led = 
-    GPIO_DT_SPEC_GET(DT_ALIAS(led0), gpios);
+    GPIO_DT_SPEC_GET(DT_ALIAS(app_led), gpios);
 
 int main(void)
 {
@@ -10,6 +10,6 @@ int main(void)
 
     while (1) {
         gpio_pin_toggle_dt(&led);
-        k_msleep(CONFIG_BLINK_SLEEP_TIME_MS);
+        k_msleep(CONFIG_APP_HEARTBEAT_PERIOD_MS);
     }
 }
